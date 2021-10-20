@@ -79,7 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const firstCardId = pickedCardId[0]
     const secondCardId = pickedCardId[1]
 
-    if (pickedCard[0] === pickedCard[1]) {
+    if (firstCardId == secondCardId) {
+      alert ("AAAARRRRGGGGHHHH, IT'S THE SAME CARD!")
+      all_cards[firstCardId].setAttribute('src', 'images/black.png')
+      all_cards[secondCardId].setAttribute('src', 'images/black.png')      
+    }
+    else if (pickedCard[0] === pickedCard[1]) {
       all_cards[firstCardId].setAttribute('src', 'images/white.png')
       all_cards[secondCardId].setAttribute('src', 'images/white.png')
       all_cards[firstCardId].removeEventListener('click', turnCard)
@@ -87,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
       alert ('YOU GOT A MATCH!')
       matchedCards.push(pickedCard)
     } else {
-      alert ('Aaaarrrrgggghhhh! NOT THIS TIME, TRY AGAIN!')
+      alert ('AAAARRRRGGGGHHHH, NOT THIS TIME, TRY AGAIN!')
       all_cards[firstCardId].setAttribute('src', 'images/black.png')
       all_cards[secondCardId].setAttribute('src', 'images/black.png')
     }
